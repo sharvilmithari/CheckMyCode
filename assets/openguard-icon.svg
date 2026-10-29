@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <!-- Minimalist Shield Boundary with Hex/Tech Geometry -->
+  <path d="M24 4L7 11.5V22.5C7 33.2 14.3 42.8 24 45.5C33.7 42.8 41 33.2 41 22.5V11.5L24 4Z" 
+        fill="#10B981" fill-opacity="0.12" 
+        stroke="#10B981" stroke-width="2.5" stroke-linejoin="round"/>
+  
+  <!-- Developer Code Bracket Mark inside the Shield -->
+  <!-- Left angle bracket < -->
+  <path d="M19 18L13 24L19 30" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Right angle bracket > -->
+  <path d="M29 18L35 24L29 30" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Security Verification Slash / Check / Dot -->
+  <path d="M26 16L22 32" stroke="#2DD4BF" stroke-width="2.2" stroke-linecap="round"/>
+</svg>
+
