@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dark Theme (Default) - Deep Cyber Navy & Obsidian */
+  --background: 8 11 18;
+  --background-secondary: 13 20 36;
+  --surface: 17 27 45;
+  --surface-elevated: 23 36 58;
+  --border: 36 51 75;
+  --primary: 52 120 246;
+  --primary-hover: 37 99 235;
+  --accent: 34 211 238;
+  --text-primary: 245 247 251;
+  --text-secondary: 167 179 200;
+  --text-muted: 113 128 150;
+  --critical: 255 77 94;
+  --high: 255 138 61;
+  --medium: 245 196 81;
+  --low: 79 156 249;
+  --info: 34 211 238;
+  --success: 54 211 153;
+  color-scheme: dark;
+}
+
+html.light,
+[data-theme="light"] {
+  /* Light Theme - Clean Modern Developer Slate */
+  --background: 248 250 252;
+  --background-secondary: 241 245 249;
+  --surface: 255 255 255;
+  --surface-elevated: 241 245 249;
+  --border: 226 232 240;
+  --primary: 37 99 235;
+  --primary-hover: 29 78 216;
+  --accent: 2 132 199;
+  --text-primary: 15 23 42;
+  --text-secondary: 51 65 85;
+  --text-muted: 100 116 139;
+  --critical: 220 38 38;
+  --high: 234 88 12;
+  --medium: 217 119 6;
+  --low: 37 99 235;
+  --info: 2 132 199;
+  --success: 5 150 105;
+  color-scheme: light;
+}
+
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--text-primary));
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Theme-responsive brand logo display */
+.logo-dark {
+  display: block;
+}
+.logo-light {
+  display: none !important;
+}
+
+html.light .logo-dark,
+[data-theme="light"] .logo-dark {
+  display: none !important;
+}
+
+html.light .logo-light,
+[data-theme="light"] .logo-light {
+  display: block !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--border));
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--primary));
+}
