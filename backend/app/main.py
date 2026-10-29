@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import io
+import os
 import json
 import logging
 from pathlib import Path
@@ -33,8 +34,8 @@ app = FastAPI(
     version="1.1.0",
 )
 
-# CORS configuration - allow Next.js dev & prod on any localhost port
-origins = [
+# CORS configuration - support localhost dev + configurable production frontend origin
+allowed_origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:3001",
@@ -43,10 +44,17 @@ origins = [
     "http://127.0.0.1:8000",
 ]
 
+frontend_origin_env = os.getenv("FRONTEND_URL", "").strip()
+if frontend_origin_env:
+    for origin in frontend_origin_env.split(","):
+        cleaned = origin.strip().rstrip("/")
+        if cleaned and cleaned not in allowed_origins:
+            allowed_origins.append(cleaned)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_origin_regex=r"^https?://(localhost|127\.0\.0\.1)(:\d+)?$",
+    allow_origins=allowed_origins,
+    allow_origin_regex=r"^https?://(localhost|127\.0\.0\.1)(:\d+)?$|^https://.*\.vercel\.app$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

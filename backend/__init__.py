@@ -1,0 +1,2 @@
+"""CheckMyCode backend package."""
+
