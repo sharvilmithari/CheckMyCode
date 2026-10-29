@@ -6,4 +6,8 @@ pytest>=8.0.0
 
 fastapi
 uvicorn
+<<<<<<< HEAD
 python-multipart
+=======
+python-multipart
+>>>>>>> origin/main
